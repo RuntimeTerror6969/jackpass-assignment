@@ -6,7 +6,7 @@ import galleryPlaceholder from "../assets/gallery.png";
 
 const EventForm = ({ addEvent }) => {
   const [formData, setFormData] = useState({
-    community: "Fitness Club",
+    community: "Indiranagar Run Club",
     title: "",
     startDate: new Date(),
     endDate: new Date(),
