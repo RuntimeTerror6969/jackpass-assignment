@@ -1,4 +1,3 @@
-```markdown
 # JackPass Events Manager
 
 A React-based event management application that allows users to create and view events with media upload capabilities. Built for the JackPass Frontend Developer position assessment.
@@ -47,7 +46,6 @@ A React-based event management application that allows users to create and view 
 - **React Icons** for visual elements
 
 ## Project Structure
-```
 
 /src
 ├── assets
