@@ -63,8 +63,9 @@ A React-based event management application that allows users to create and view 
 
 3. **Run Application**
    ```bash
-   npm start
+   npm run dev
    ```
+   The applications runs locally on `bash http://localhost:5173/`
 
 ## Key Implementation Details
 
