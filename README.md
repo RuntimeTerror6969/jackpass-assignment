@@ -51,7 +51,7 @@ A React-based event management application that allows users to create and view 
 
    ```bash
    git clone https://github.com/RuntimeTerror6969/jackpass-assignment/tree/main
-   cd jackpass-events
+   cd jackpass-assignment
    ```
 
 2. **Install Dependencies**
