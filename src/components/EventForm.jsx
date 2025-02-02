@@ -16,6 +16,7 @@ const EventForm = ({ addEvent }) => {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const validateForm = () => {
     const newErrors = {};
@@ -50,7 +51,7 @@ const EventForm = ({ addEvent }) => {
       };
       addEvent(newEvent);
       setFormData({
-        community: "Fitness Club",
+        community: "Indiranagar Run Club",
         title: "",
         startDate: new Date(),
         endDate: new Date(),
@@ -59,6 +60,8 @@ const EventForm = ({ addEvent }) => {
         media: null,
       });
       setErrors({});
+      setSuccessMessage("Event created successfully!");
+      setTimeout(() => setSuccessMessage(""), 3000);
     } catch (error) {
       console.error("Error processing media:", error);
       setErrors({ media: "Error processing media" });
@@ -84,24 +87,50 @@ const EventForm = ({ addEvent }) => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
+    <div className="bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto relative">
+      {/* Success Message Overlay */}
+      {successMessage && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-xl max-w-md text-center animate-bounce-in">
+            <div className="mb-4 flex justify-center">
+              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                <svg
+                  className="w-10 h-10 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">{successMessage}</h3>
+            <p className="text-gray-600">Your event is now live!</p>
+          </div>
+        </div>
+      )}
+
       <h2 className="text-2xl font-bold text-center mb-8">Create New Event</h2>
-      {/* Media Upload Section */}
-      <div
-        className="mb-8 relative w-full overflow-hidden rounded-xl"
-        style={{ paddingBottom: "125%" }} // 4:5 aspect ratio
-      >
+
+      {/* Media Upload Section - Fixed 4:5 ratio */}
+      <div className="mb-8 relative bg-gradient-to-b from-gray-50 to-gray-100 rounded-xl aspect-[4/5] flex items-center justify-center">
         {formData.media ? (
           formData.media.type === "image" ? (
             <img
               src={URL.createObjectURL(formData.media.file)}
               alt="Preview"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="w-full h-full object-contain p-2"
             />
           ) : (
             <video
               src={URL.createObjectURL(formData.media.file)}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-xl"
               controls
             />
           )
@@ -109,11 +138,11 @@ const EventForm = ({ addEvent }) => {
           <img
             src={galleryPlaceholder}
             alt="Event placeholder"
-            className="absolute inset-0 w-full h-full object-cover opacity-75"
+            className="w-full h-full object-contain p-8 opacity-75"
           />
         )}
 
-        <label className="absolute bottom-4 left-1/2 transform -translate-x-1/2 px-6 py-2 bg-white/90 backdrop-blur-sm text-gray-600 rounded-full cursor-pointer shadow-sm hover:bg-white transition-all">
+        <label className="absolute bottom-4 px-6 py-2 bg-white/90 backdrop-blur-sm text-gray-600 rounded-full cursor-pointer shadow-sm hover:bg-white transition-all">
           {formData.media ? "🖼 Change Media" : "📸 Add Media"}
           <input
             type="file"
@@ -123,6 +152,8 @@ const EventForm = ({ addEvent }) => {
           />
         </label>
       </div>
+
+      {/* Rest of the form remains the same */}
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Community Selection */}
         <div>
@@ -137,9 +168,9 @@ const EventForm = ({ addEvent }) => {
             className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="Indiranagar Run Club">Indiranagar Run Club</option>
-            <option value="Bhag Club">Bhag Club</option>
-            <option value="Art Club">Art Club</option>
-            <option value="Book Lovers Club">Book Lovers Club</option>
+            <option value="Tech Community">Tech Community</option>
+            <option value="Art Collective">Art Collective</option>
+            <option value="Book Lovers">Book Lovers</option>
           </select>
           {errors.community && (
             <p className="text-red-500 text-sm mt-1">{errors.community}</p>
