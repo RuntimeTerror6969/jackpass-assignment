@@ -61,12 +61,11 @@ A React-based event management application that allows users to create and view 
 ## Setup Instructions
 
 1. **Clone Repository**
+
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/RuntimeTerror6969/jackpass-assignment/tree/main
    cd jackpass-events
    ```
-
-````
 
 2. **Install Dependencies**
 
@@ -138,6 +137,3 @@ A React-based event management application that allows users to create and view 
 ## License
 
 MIT License - Free for modification and reuse. Please attribute if used as reference.
-
-
-````
