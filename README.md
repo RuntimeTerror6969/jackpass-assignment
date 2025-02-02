@@ -65,7 +65,7 @@ A React-based event management application that allows users to create and view 
    ```bash
    npm run dev
    ```
-   The applications runs locally on `bash http://localhost:5173/`
+   The applications runs locally on `http://localhost:5173/`
 
 ## Key Implementation Details
 
