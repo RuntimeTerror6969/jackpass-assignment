@@ -136,10 +136,10 @@ const EventForm = ({ addEvent }) => {
             }
             className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
           >
-            <option value="Fitness Club">Indiranagar Run Club</option>
-            <option value="Tech Community">Bhag Club</option>
-            <option value="Art Collective">Art Club</option>
-            <option value="Book Lovers">Book Lovers Club</option>
+            <option value="Indiranagar Run Club">Indiranagar Run Club</option>
+            <option value="Bhag Club">Bhag Club</option>
+            <option value="Art Club">Art Club</option>
+            <option value="Book Lovers Club">Book Lovers Club</option>
           </select>
           {errors.community && (
             <p className="text-red-500 text-sm mt-1">{errors.community}</p>
