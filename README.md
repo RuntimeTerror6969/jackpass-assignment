@@ -58,14 +58,14 @@ A React-based event management application that allows users to create and view 
 ├── App.jsx # Main application component
 └── index.js # Entry point
 
-````
-
 ## Setup Instructions
 
 1. **Clone Repository**
    ```bash
    git clone [repository-url]
    cd jackpass-events
+   ```
+
 ````
 
 2. **Install Dependencies**
@@ -139,17 +139,5 @@ A React-based event management application that allows users to create and view 
 
 MIT License - Free for modification and reuse. Please attribute if used as reference.
 
-```
 
-This README:
-1. Follows the original assignment requirements
-2. Highlights core functionality
-3. Provides clear setup instructions
-4. Explains technical implementation
-5. Identifies improvement areas
-6. Maintains professional structure
-7. Includes all requested sections
-8. Uses proper markdown formatting
-
-Would you like me to make any specific adjustments or add additional sections?
-```
+````
