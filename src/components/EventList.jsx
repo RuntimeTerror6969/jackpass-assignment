@@ -12,7 +12,6 @@ const EventList = ({ events }) => {
           </p>
         ) : (
           events.map((event) => {
-            // Only parse and format if startDate exists.
             let relativeTime = "No start date provided";
             let formattedDateTime = "";
             if (event.startDate) {
@@ -29,20 +28,21 @@ const EventList = ({ events }) => {
                 className="border rounded-xl p-4 hover:shadow-md transition-shadow"
               >
                 <div className="flex gap-4">
-                  {/* Media Thumbnail - Fixed aspect ratio container */}
+                  {/* Media Thumbnail Container */}
                   {event.media && (
-                    <div className="w-32 h-48 flex-shrink-0 relative overflow-hidden rounded-lg">
+                    <div className="w-40 aspect-[4/5] flex-shrink-0 relative bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center">
                       {event.media.type === "image" ? (
                         <img
                           src={event.media.data}
                           alt="Event media"
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                         />
                       ) : (
                         <video
                           src={event.media.data}
                           className="w-full h-full object-cover"
                           controls
+                          controlsList="nodownload"
                         />
                       )}
                     </div>

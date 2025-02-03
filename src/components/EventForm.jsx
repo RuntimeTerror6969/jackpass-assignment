@@ -61,7 +61,7 @@ const EventForm = ({ addEvent }) => {
       });
       setErrors({});
       setSuccessMessage("Event created successfully!");
-      setTimeout(() => setSuccessMessage(""), 3000);
+      setTimeout(() => setSuccessMessage(""), 1500);
     } catch (error) {
       console.error("Error processing media:", error);
       setErrors({ media: "Error processing media" });
@@ -111,7 +111,6 @@ const EventForm = ({ addEvent }) => {
               </div>
             </div>
             <h3 className="text-xl font-semibold mb-2">{successMessage}</h3>
-            <p className="text-gray-600">Your event is now live!</p>
           </div>
         </div>
       )}
